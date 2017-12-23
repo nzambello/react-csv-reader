@@ -101,7 +101,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var PapaParse = __webpack_require__(4);
 
 var CSVReader = function CSVReader(_ref) {
-  var cssClass = _ref.cssClass,
+  var _ref$cssClass = _ref.cssClass,
+      cssClass = _ref$cssClass === undefined ? 'csv-input' : _ref$cssClass,
+      label = _ref.label,
       onFileLoaded = _ref.onFileLoaded,
       onError = _ref.onError;
 
@@ -120,19 +122,23 @@ var CSVReader = function CSVReader(_ref) {
     reader.readAsText(e.target.files[0]);
   };
 
-  return _react2.default.createElement('input', {
-    className: cssClass ? cssClass : '',
-    type: 'file',
-    id: 'fileElem',
-    accept: 'text/csv',
-    onChange: function onChange(e) {
-      return handleChangeFile(e);
-    }
-  });
+  return _react2.default.createElement(
+    'div',
+    { className: 'csv-reader-input' },
+    label && _react2.default.createElement(
+      'label',
+      null,
+      label
+    ),
+    _react2.default.createElement('input', { className: cssClass, type: 'file', accept: 'text/csv', onChange: function onChange(e) {
+        return handleChangeFile(e);
+      } })
+  );
 };
 
 CSVReader.propTypes = {
   cssClass: _propTypes.string,
+  label: _propTypes.string,
   onFileLoaded: _propTypes.func,
   onError: _propTypes.func
 };
