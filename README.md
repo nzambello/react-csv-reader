@@ -25,8 +25,8 @@ npm install --save react-csv-reader
 
 ```javascript
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom';
-import CSVReader from 'react-csv-reader';
+import ReactDOM from 'react-dom'
+import CSVReader from 'react-csv-reader'
 
 class App extends Component {
   ...
@@ -43,7 +43,7 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 ### Parameters
