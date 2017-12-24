@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, func } from 'prop-types';
+import { string, func, element, oneOfType } from 'prop-types';
 const PapaParse = require('papaparse/papaparse.min.js');
 
 const CSVReader = ({ cssClass = 'csv-input', label, onFileLoaded, onError }) => {
@@ -28,7 +28,7 @@ const CSVReader = ({ cssClass = 'csv-input', label, onFileLoaded, onError }) => 
 
 CSVReader.propTypes = {
   cssClass: string,
-  label: string,
+  label: oneOfType([string, element]),
   onFileLoaded: func,
   onError: func
 };
