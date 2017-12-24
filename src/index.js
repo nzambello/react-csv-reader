@@ -2,7 +2,7 @@ import React from 'react';
 import { string, func, element, oneOfType } from 'prop-types';
 const PapaParse = require('papaparse/papaparse.min.js');
 
-const CSVReader = ({ cssClass = 'csv-input', label, onFileLoaded, onError }) => {
+const CSVReader = ({ cssClass = 'csv-reader-input', label, onFileLoaded, onError }) => {
   let fileContent = undefined;
 
   const handleChangeFile = e => {
@@ -19,9 +19,9 @@ const CSVReader = ({ cssClass = 'csv-input', label, onFileLoaded, onError }) => 
   };
 
   return (
-    <div className="csv-reader-input">
+    <div className={cssClass}>
       {label && <label>{label}</label>}
-      <input className={cssClass} type="file" accept="text/csv" onChange={e => handleChangeFile(e)} />
+      <input className="csv-input" type="file" accept="text/csv" onChange={e => handleChangeFile(e)} />
     </div>
   );
 };
