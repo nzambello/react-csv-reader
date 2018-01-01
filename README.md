@@ -2,9 +2,12 @@
 
 [![license](https://img.shields.io/github/license/nzambello/react-csv-reader.svg)](https://github.com/nzambello/react-csv-reader/blob/master/LICENSE)
 [![npm version](https://badge.fury.io/js/react-csv-reader.svg)](https://www.npmjs.com/package/react-csv-reader)
+[![npm](https://img.shields.io/npm/dt/react-csv-reader.svg)](https://www.npmjs.com/package/react-csv-reader)
 
 React component that handles csv file input.  
-It handles file input and returns its content as a matrix.
+It handles file input and returns its content as a matrix.  
+  
+You can try it out in a [demo on Codesandbox](https://codesandbox.io/s/5058ln02lx).
 
 ## Installation
 
