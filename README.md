@@ -63,3 +63,4 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 When the file has been loaded, it will parsed with [PapaParse](https://github.com/mholt/PapaParse) from a CSV formatted text to a matrix.  
 That matrix is returned to the parent component with `onFileLoaded` function (it will be passed as an argument).
+The second argument to `onFileLoaded` will be the filename provided
