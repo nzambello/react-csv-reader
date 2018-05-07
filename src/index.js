@@ -7,12 +7,13 @@ const CSVReader = ({ cssClass = 'csv-reader-input', label, onFileLoaded, onError
 
   const handleChangeFile = e => {
     let reader = new FileReader();
+    const filename = e.target.files[0].name;
 
     reader.onload = event => {
       const csvData = PapaParse.parse(event.target.result, {
         error: onError
       });
-      onFileLoaded(csvData.data);
+      onFileLoaded(csvData.data, filename);
     };
 
     reader.readAsText(e.target.files[0]);
