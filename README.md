@@ -42,6 +42,7 @@ class App extends Component {
         label="Select CSV with secret Death Star statistics"
         onFileLoaded={this.handleForce}
         onError={this.handleDarkSideForce}
+        inputId="ObiWan"
       />
     )
   }
@@ -58,6 +59,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | label        | string, element |             | If present, it will be rendered in a `<label>` to describe input aim. |
 | onFileLoaded | function        |             | (**_required_**) The function to be called passing loaded results.    |
 | onError      | function        |             | Error handling function.                                              |
+| inputId      | string          |             | An id to be applied to the `<input>` element.                         |
 
 ### Results
 
