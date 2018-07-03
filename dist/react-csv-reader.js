@@ -5243,17 +5243,32 @@ var CSVReader = function CSVReader(_ref) {
   return _react2.default.createElement(
     'div',
     { style: proxyContainerCssClass, className: cssClass },
-    _react2.default.createElement('button', { style: proxyButtonCssClass, className: 'proxy-input', type: 'button', onClick: handleClick, onDrop: handleFileDrop, onDragOver: handleDragStart }),
+    _react2.default.createElement('button', {
+      style: proxyButtonCssClass,
+      className: 'proxy-input',
+      type: 'button',
+      onClick: handleClick,
+      onDrop: handleFileDrop,
+      onDragOver: handleDragStart
+    }),
     label && _react2.default.createElement(
       'label',
       { 'for': inputId },
       label
     ),
-    _react2.default.createElement('input', { style: proxyInputCssClass, className: 'csv-input', type: 'file', id: inputId, accept: 'text/csv', ref: function ref(_ref2) {
+    _react2.default.createElement('input', {
+      style: proxyInputCssClass,
+      className: 'csv-input',
+      type: 'file',
+      id: inputId,
+      accept: 'text/csv',
+      ref: function ref(_ref2) {
         return fileInputRef = _ref2;
-      }, onChange: function onChange(e) {
+      },
+      onChange: function onChange(e) {
         return handleChangeFile(e);
-      } })
+      }
+    })
   );
 };
 
