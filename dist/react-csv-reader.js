@@ -5194,7 +5194,7 @@ var PapaParse = __webpack_require__(17);
 
 var CSVReader = function CSVReader(_ref) {
   var _ref$cssClass = _ref.cssClass,
-      cssClass = _ref$cssClass === undefined ? 'csv-reader' : _ref$cssClass,
+      cssClass = _ref$cssClass === undefined ? 'csv-reader-input' : _ref$cssClass,
       _ref$proxyButtonCssCl = _ref.proxyButtonCssClass,
       proxyButtonCssClass = _ref$proxyButtonCssCl === undefined ? 'csv-reader-proxy-button' : _ref$proxyButtonCssCl,
       _ref$proxyContainerCs = _ref.proxyContainerCssClass,
@@ -5242,10 +5242,9 @@ var CSVReader = function CSVReader(_ref) {
 
   return _react2.default.createElement(
     'div',
-    { style: proxyContainerCssClass, className: cssClass },
+    { className: (cssClass, proxyContainerCssClass) },
     _react2.default.createElement('button', {
-      style: proxyButtonCssClass,
-      className: 'proxy-input',
+      className: proxyButtonCssClass,
       type: 'button',
       onClick: handleClick,
       onDrop: handleFileDrop,
@@ -5257,8 +5256,7 @@ var CSVReader = function CSVReader(_ref) {
       label
     ),
     _react2.default.createElement('input', {
-      style: proxyInputCssClass,
-      className: 'csv-input',
+      className: proxyInputCssClass,
       type: 'file',
       id: inputId,
       accept: 'text/csv',

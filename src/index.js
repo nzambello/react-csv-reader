@@ -4,7 +4,7 @@ import './styles.css';
 const PapaParse = require('papaparse/papaparse.min.js');
 
 const CSVReader = ({
-  cssClass = 'csv-reader',
+  cssClass = 'csv-reader-input',
   proxyButtonCssClass = 'csv-reader-proxy-button',
   proxyContainerCssClass = 'csv-reader-proxy-container',
   proxyInputCssClass = 'csv-reader-proxy-input',
@@ -47,10 +47,9 @@ const CSVReader = ({
   };
 
   return (
-    <div style={proxyContainerCssClass} className={cssClass}>
+    <div className={(cssClass, proxyContainerCssClass)}>
       <button
-        style={proxyButtonCssClass}
-        className="proxy-input"
+        className={proxyButtonCssClass}
         type="button"
         onClick={handleClick}
         onDrop={handleFileDrop}
@@ -58,8 +57,7 @@ const CSVReader = ({
       />
       {label && <label for={inputId}>{label}</label>}
       <input
-        style={proxyInputCssClass}
-        className="csv-input"
+        className={proxyInputCssClass}
         type="file"
         id={inputId}
         accept="text/csv"
