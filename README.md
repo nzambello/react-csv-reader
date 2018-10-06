@@ -53,13 +53,14 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 ### Parameters
 
-| Name         | Type            | Default     | Description                                                           |
-| ------------ | --------------- | ----------- | --------------------------------------------------------------------- |
-| cssClass     | string          | `csv-input` | A CSS class to be applied to the `<input>` element.                   |
-| label        | string, element |             | If present, it will be rendered in a `<label>` to describe input aim. |
-| onFileLoaded | function        |             | (**_required_**) The function to be called passing loaded results.    |
-| onError      | function        |             | Error handling function.                                              |
-| inputId      | string          |             | An id to be applied to the `<input>` element.                         |
+| Name          | Type            | Default     | Description                                                           |
+| ------------- | --------------- | ----------- | --------------------------------------------------------------------- |
+| cssClass      | string          | `csv-input` | A CSS class to be applied to the `<input>` element.                   |
+| label         | string, element |             | If present, it will be rendered in a `<label>` to describe input aim. |
+| onFileLoaded  | function        |             | (**_required_**) The function to be called passing loaded results.    |
+| onError       | function        |             | Error handling function.                                              |
+| parserOptions | object          | `{}`        | [PapaParse configuration](https://www.papaparse.com/docs#config) object override |
+| inputId       | string          |             | An id to be applied to the `<input>` element.                         |
 
 ### Results
 
