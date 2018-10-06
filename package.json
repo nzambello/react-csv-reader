@@ -1,6 +1,6 @@
 {
   "name": "react-csv-reader",
-  "version": "0.3.3",
+  "version": "1.0.0",
   "description": "React component that handles csv file input.",
   "main": "dist/react-csv-reader.js",
   "repository": "https://github.com/nzambello/react-csv-reader",
