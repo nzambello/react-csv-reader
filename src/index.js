@@ -2,7 +2,14 @@ import React from 'react';
 import { string, func, element, oneOfType } from 'prop-types';
 const PapaParse = require('papaparse/papaparse.min.js');
 
-const CSVReader = ({ cssClass = 'csv-reader-input', label, onFileLoaded, onError, inputId = null, parserOptions = {} }) => {
+const CSVReader = ({
+  cssClass = 'csv-reader-input',
+  label,
+  onFileLoaded,
+  onError,
+  inputId = null,
+  parserOptions = {}
+}) => {
   let fileContent = undefined;
 
   const handleChangeFile = e => {
@@ -10,9 +17,12 @@ const CSVReader = ({ cssClass = 'csv-reader-input', label, onFileLoaded, onError
     const filename = e.target.files[0].name;
 
     reader.onload = event => {
-      const csvData = PapaParse.parse(event.target.result, Object.assign(parserOptions, {
-        error: onError
-      }));
+      const csvData = PapaParse.parse(
+        event.target.result,
+        Object.assign(parserOptions, {
+          error: onError
+        })
+      );
       onFileLoaded(csvData.data, filename);
     };
 
@@ -21,7 +31,7 @@ const CSVReader = ({ cssClass = 'csv-reader-input', label, onFileLoaded, onError
 
   return (
     <div className={cssClass}>
-      {label && <label for={inputId}>{label}</label>}
+      {label && <label htmlFor={inputId}>{label}</label>}
       <input className="csv-input" type="file" id={inputId} accept="text/csv" onChange={e => handleChangeFile(e)} />
     </div>
   );
