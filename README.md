@@ -6,7 +6,7 @@
 
 React component that handles csv file input.  
 It handles file input and returns its content as a matrix.  
-  
+
 You can try it out in a [demo on Codesandbox](https://codesandbox.io/s/5058ln02lx).
 
 ## Installation
@@ -43,6 +43,7 @@ class App extends Component {
         onFileLoaded={this.handleForce}
         onError={this.handleDarkSideForce}
         inputId="ObiWan"
+        inputStyle={{color: 'red'}}
       />
     )
   }
@@ -61,9 +62,10 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | onError       | function        |             | Error handling function.                                              |
 | parserOptions | object          | `{}`        | [PapaParse configuration](https://www.papaparse.com/docs#config) object override |
 | inputId       | string          |             | An id to be applied to the `<input>` element.                         |
+| inputStyle    | object          | `{}`        | Some style to be applied to the `<input>` element.                    |
 
 ### Results
 
-When the file has been loaded, it will parsed with [PapaParse](https://github.com/mholt/PapaParse) from a CSV formatted text to a matrix.  
+When the file has been loaded, it will be parsed with [PapaParse](https://github.com/mholt/PapaParse) from a CSV formatted text to a matrix.
 That matrix is returned to the parent component with `onFileLoaded` function (it will be passed as an argument).
 The second argument to `onFileLoaded` will be the filename provided
