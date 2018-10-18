@@ -33,7 +33,14 @@ const CSVReader = ({
   return (
     <div className={cssClass}>
       {label && <label htmlFor={inputId}>{label}</label>}
-      <input className="csv-input" type="file" id={inputId} style={inputStyle} accept="text/csv" onChange={e => handleChangeFile(e)} />
+      <input
+        className="csv-input"
+        type="file"
+        id={inputId}
+        style={inputStyle}
+        accept="text/csv"
+        onChange={e => handleChangeFile(e)}
+      />
     </div>
   );
 };
