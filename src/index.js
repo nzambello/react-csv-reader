@@ -4,6 +4,7 @@ const PapaParse = require('papaparse/papaparse.min.js');
 
 const CSVReader = ({
   cssClass = 'csv-reader-input',
+  cssInputClass = 'csv-input',
   label,
   onFileLoaded,
   onError,
@@ -34,7 +35,7 @@ const CSVReader = ({
     <div className={cssClass}>
       {label && <label htmlFor={inputId}>{label}</label>}
       <input
-        className="csv-input"
+        className={cssInputClass}
         type="file"
         id={inputId}
         style={inputStyle}
@@ -47,8 +48,9 @@ const CSVReader = ({
 
 CSVReader.propTypes = {
   cssClass: string,
+  cssInputClass: string,
   label: oneOfType([string, element]),
-  onFileLoaded: func,
+  onFileLoaded: func.isRequired,
   onError: func,
   inputId: string
 };
