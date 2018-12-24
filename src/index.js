@@ -39,7 +39,7 @@ const CSVReader = ({
         type="file"
         id={inputId}
         style={inputStyle}
-        accept="text/csv"
+        accept=".csv"
         onChange={e => handleChangeFile(e)}
       />
     </div>
