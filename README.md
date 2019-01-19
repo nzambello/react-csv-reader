@@ -9,6 +9,9 @@ It handles file input and returns its content as a matrix.
 
 You can try it out in a [demo on Codesandbox](https://codesandbox.io/s/5058ln02lx).
 
+[Support me on Patreon!](https://www.patreon.com/bePatron?u=16610795)
+
+
 ## Installation
 
 Install the package with either yarn or npm.
