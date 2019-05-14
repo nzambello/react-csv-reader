@@ -3,6 +3,7 @@ import { string, func, element, oneOfType } from 'prop-types';
 const PapaParse = require('papaparse/papaparse.min.js');
 
 const CSVReader = ({
+  accept = '.csv, text/csv',
   cssClass = 'csv-reader-input',
   cssInputClass = 'csv-input',
   label,
@@ -39,7 +40,7 @@ const CSVReader = ({
         type="file"
         id={inputId}
         style={inputStyle}
-        accept=".csv, text/csv"
+        accept={accept}
         onChange={e => handleChangeFile(e)}
       />
     </div>
