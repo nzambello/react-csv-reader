@@ -16,19 +16,21 @@ const CSVReader = ({
 
   const handleChangeFile = e => {
     let reader = new FileReader();
-    const filename = e.target.files[0].name;
+    if (e.target.files.length > 0) {
+      const filename = e.target.files[0].name;
 
-    reader.onload = event => {
-      const csvData = PapaParse.parse(
-        event.target.result,
-        Object.assign(parserOptions, {
-          error: onError
-        })
-      );
-      onFileLoaded(csvData.data, filename);
-    };
+      reader.onload = event => {
+        const csvData = PapaParse.parse(
+          event.target.result,
+          Object.assign(parserOptions, {
+            error: onError
+          })
+        );
+        onFileLoaded(csvData.data, filename);
+      };
 
-    reader.readAsText(e.target.files[0]);
+      reader.readAsText(e.target.files[0]);
+    }
   };
 
   return (
