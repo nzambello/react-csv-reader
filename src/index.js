@@ -11,6 +11,7 @@ const CSVReader = ({
   onError,
   inputId = null,
   inputStyle = {},
+  fileEncoding = 'UTF-8',
   parserOptions = {}
 }) => {
   let fileContent = undefined;
@@ -24,13 +25,14 @@ const CSVReader = ({
         const csvData = PapaParse.parse(
           event.target.result,
           Object.assign(parserOptions, {
-            error: onError
+            error: onError,
+            encoding: fileEncoding
           })
         );
         onFileLoaded(csvData.data, filename);
       };
 
-      reader.readAsText(e.target.files[0]);
+      reader.readAsText(e.target.files[0], fileEncoding);
     }
   };
 
