@@ -1,8 +1,8 @@
 import React from 'react';
-import { string, func, element, oneOfType } from 'prop-types';
+import { string, func, element, oneOfType, shape, instanceOf } from 'prop-types';
 const PapaParse = require('papaparse/papaparse.min.js');
 
-const CSVReader = ({
+const CSVReader = React.forwardRef(({
   accept = '.csv, text/csv',
   cssClass = 'csv-reader-input',
   cssInputClass = 'csv-input',
@@ -13,7 +13,7 @@ const CSVReader = ({
   inputStyle = {},
   fileEncoding = 'UTF-8',
   parserOptions = {}
-}) => {
+}, ref) => {
   let fileContent = undefined;
 
   const handleChangeFile = e => {
@@ -40,6 +40,7 @@ const CSVReader = ({
     <div className={cssClass}>
       {label && <label htmlFor={inputId}>{label}</label>}
       <input
+        ref={ref}
         className={cssInputClass}
         type="file"
         id={inputId}
@@ -49,7 +50,7 @@ const CSVReader = ({
       />
     </div>
   );
-};
+});
 
 CSVReader.propTypes = {
   cssClass: string,
@@ -57,7 +58,11 @@ CSVReader.propTypes = {
   label: oneOfType([string, element]),
   onFileLoaded: func.isRequired,
   onError: func,
-  inputId: string
+  inputId: string,
+  ref: oneOfType([
+    func,
+    shape({ current: instanceOf(Element) })
+  ])
 };
 
 export default CSVReader;

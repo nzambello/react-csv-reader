@@ -66,9 +66,41 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | inputId       | string          |                    | An id to be applied to the `<input>` element.                                    |
 | inputStyle    | object          | `{}`               | Some style to be applied to the `<input>` element.                               |
 | fileEncoding  | string          | `UTF-8`            | Encoding type of the input file                                                  |
+| ref           | React ref       |                    | Reference of the `<input>`                                                       |
 
 ### Results
 
 When the file has been loaded, it will be parsed with [PapaParse](https://github.com/mholt/PapaParse) from a CSV formatted text to a matrix.
 That matrix is returned to the parent component with `onFileLoaded` function (it will be passed as an argument).
 The second argument to `onFileLoaded` will be the filename provided
+
+## Replacing input by a different element
+
+```javascript
+import React, { useRef } from "react";
+import ReactDOM from 'react-dom';
+import CSVReader from 'react-csv-reader';
+
+const App = props => {
+    const inputRef = useRef()
+    const upload = () => inputRef.current.click()
+    return (
+        <div>
+            <CSVReader
+                ref={inputRef}
+                onFileLoaded={console.log}
+                onError={console.log}
+                inputStyle={{ display: 'none' }}
+            />
+            <img
+                style={{ width: 48, height: 36 }}
+                alt="upload"
+                src="http://www.graphicssimplified.com/wp-content/uploads/2015/04/upload-cloud.png"
+                onClick={upload}
+            />
+        </div>
+    );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
+```
