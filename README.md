@@ -28,6 +28,8 @@ npm install --save react-csv-reader
 
 ## Usage
 
+Basic usage:
+
 ```javascript
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
@@ -38,11 +40,42 @@ class App extends Component {
 
   render() {
     return (
+      <CSVReader onFileLoaded={data => console.log(data)} />
+    )
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
+```
+
+More complex example:
+
+```javascript
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import CSVReader from 'react-csv-reader'
+
+class App extends Component {
+  ...
+
+  const papaparseOptions = {
+    header: true,
+    dynamicTyping: true,
+    skipEmptyLines: true,
+    transformHeader: header =>
+      header
+        .toLowerCase()
+        .replace(/\W/g, '_')
+  }
+
+  render() {
+    return (
       <CSVReader
         cssClass="csv-reader-input"
         label="Select CSV with secret Death Star statistics"
         onFileLoaded={this.handleForce}
         onError={this.handleDarkSideForce}
+        parserOptions={papaparseOptions}
         inputId="ObiWan"
         inputStyle={{color: 'red'}}
       />
@@ -67,8 +100,10 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | inputStyle    | object          | `{}`               | Some style to be applied to the `<input>` element.                               |
 | fileEncoding  | string          | `UTF-8`            | Encoding type of the input file                                                  |
 
+
 ### Results
 
 When the file has been loaded, it will be parsed with [PapaParse](https://github.com/mholt/PapaParse) from a CSV formatted text to a matrix.
 That matrix is returned to the parent component with `onFileLoaded` function (it will be passed as an argument).
 The second argument to `onFileLoaded` will be the filename provided
+

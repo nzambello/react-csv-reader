@@ -1,12 +1,13 @@
 {
-  "extends": ["react-app", "prettier"],
+  "extends": ["react-app", "prettier", "prettier/react"],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": [
       "warn",
       {
+        "printWidth": 120,
         "singleQuote": true,
-        "trailingComma": "none"
+        "trailingComma": "all"
       }
     ]
   }

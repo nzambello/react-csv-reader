@@ -1,6 +1,6 @@
-import React from 'react';
-import { string, func, element, oneOfType } from 'prop-types';
-const PapaParse = require('papaparse/papaparse.min.js');
+import React from 'react'
+import { string, func, element, oneOfType } from 'prop-types'
+import PapaParse from 'papaparse'
 
 const CSVReader = ({
   accept = '.csv, text/csv',
@@ -12,29 +12,27 @@ const CSVReader = ({
   inputId = null,
   inputStyle = {},
   fileEncoding = 'UTF-8',
-  parserOptions = {}
+  parserOptions = {},
 }) => {
-  let fileContent = undefined;
-
   const handleChangeFile = e => {
-    let reader = new FileReader();
+    let reader = new FileReader()
     if (e.target.files.length > 0) {
-      const filename = e.target.files[0].name;
+      const filename = e.target.files[0].name
 
       reader.onload = event => {
         const csvData = PapaParse.parse(
           event.target.result,
           Object.assign(parserOptions, {
             error: onError,
-            encoding: fileEncoding
-          })
-        );
-        onFileLoaded(csvData.data, filename);
-      };
+            encoding: fileEncoding,
+          }),
+        )
+        onFileLoaded(csvData.data, filename)
+      }
 
-      reader.readAsText(e.target.files[0], fileEncoding);
+      reader.readAsText(e.target.files[0], fileEncoding)
     }
-  };
+  }
 
   return (
     <div className={cssClass}>
@@ -48,8 +46,8 @@ const CSVReader = ({
         onChange={e => handleChangeFile(e)}
       />
     </div>
-  );
-};
+  )
+}
 
 CSVReader.propTypes = {
   cssClass: string,
@@ -57,7 +55,7 @@ CSVReader.propTypes = {
   label: oneOfType([string, element]),
   onFileLoaded: func.isRequired,
   onError: func,
-  inputId: string
-};
+  inputId: string,
+}
 
-export default CSVReader;
+export default CSVReader
