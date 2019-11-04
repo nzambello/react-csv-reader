@@ -7,7 +7,7 @@
 React component that handles csv file input.  
 It handles file input and returns its content as a matrix.
 
-You can try it out in a [demo on Codesandbox](https://codesandbox.io/s/5058ln02lx).
+You can try it out in a [demo on Codesandbox](https://codesandbox.io/s/react-csv-reader-vtull).
 
 
 ## Installation
