@@ -40,7 +40,7 @@ class App extends Component {
 
   render() {
     return (
-      <CSVReader onFileLoaded={data => console.log(data)} />
+      <CSVReader onFileLoaded={(data, fileName) => console.log(data, fileName)} />
     )
   }
 }
