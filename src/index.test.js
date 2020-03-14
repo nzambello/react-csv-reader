@@ -31,6 +31,7 @@ describe('CSVReader with all custom props', () => {
       onError={e => console.error(e)}
       onFileLoaded={(data, fileName) => console.log(data, fileName)}
       parserOptions={papaparseOptions}
+      disabled
     />
   )
 
@@ -69,5 +70,12 @@ describe('CSVReader with all custom props', () => {
     const inputNode = getByLabelText('CSV input label text')
 
     expect(inputNode).toBeDefined()
+  })
+
+  test('has disabled prop set', () => {
+    const { getByLabelText } = render(csvReader)
+    const inputNode = getByLabelText('CSV input label text')
+
+    expect(inputNode.getAttribute('disabled')).toBeDefined()
   })
 })
