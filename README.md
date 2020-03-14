@@ -9,7 +9,6 @@ It handles file input and returns its content as a matrix.
 
 You can try it out in a [demo on Codesandbox](https://codesandbox.io/s/react-csv-reader-vtull).
 
-
 ## Installation
 
 Install the package with either yarn or npm.
@@ -88,22 +87,21 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 ### Parameters
 
-| Name          | Type            | Default            | Description                                                                      |
-| ------------- | --------------- | ------------------ | -------------------------------------------------------------------------------- |
-| cssClass      | string          | `csv-reader-input` | A CSS class to be applied to the wrapper element.                                |
-| cssInputClass | string          | `csv-input`        | A CSS class to be applied to the `<input>` element.                              |
-| label         | string, element |                    | If present, it will be rendered in a `<label>` to describe input aim.            |
-| onFileLoaded  | function        |                    | (**_required_**) The function to be called passing loaded results.               |
-| onError       | function        |                    | Error handling function.                                                         |
-| parserOptions | object          | `{}`               | [PapaParse configuration](https://www.papaparse.com/docs#config) object override |
-| inputId       | string          |                    | An id to be applied to the `<input>` element.                                    |
-| inputStyle    | object          | `{}`               | Some style to be applied to the `<input>` element.                               |
-| fileEncoding  | string          | `UTF-8`            | Encoding type of the input file                                                  |
-
+| Name          | Type            | Default                  | Description                                                                      |
+| ------------- | --------------- | ------------------------ | -------------------------------------------------------------------------------- |
+| accept        | striing         | `.csv, text/csv`         | File type accepted by file input                                                 |
+| cssClass      | string          | `csv-reader-input`       | A CSS class to be applied to the wrapper element.                                |
+| cssInputClass | string          | `csv-input`              | A CSS class to be applied to the `<input>` element.                              |
+| label         | string, element |                          | If present, it will be rendered in a `<label>` to describe input aim.            |
+| onFileLoaded  | function        |                          | (**_required_**) The function to be called passing loaded results.               |
+| onError       | function        |                          | Error handling function.                                                         |
+| parserOptions | object          | `{}`                     | [PapaParse configuration](https://www.papaparse.com/docs#config) object override |
+| inputId       | string          | `react-csv-reader-input` | An id to be applied to the `<input>` element.                                    |
+| inputStyle    | object          | `{}`                     | Some style to be applied to the `<input>` element.                               |
+| fileEncoding  | string          | `UTF-8`                  | Encoding type of the input file                                                  |
 
 ### Results
 
 When the file has been loaded, it will be parsed with [PapaParse](https://github.com/mholt/PapaParse) from a CSV formatted text to a matrix of strings or a list of objects (using `header` option).
 That matrix is returned to the parent component with `onFileLoaded` function (it will be passed as an argument).
 The second argument to `onFileLoaded` will be the filename provided
-

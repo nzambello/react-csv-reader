@@ -7,7 +7,7 @@ const CSVReader = ({
   cssClass = 'csv-reader-input',
   cssInputClass = 'csv-input',
   fileEncoding = 'UTF-8',
-  inputId = null,
+  inputId = 'react-csv-reader-input',
   inputStyle = {},
   label,
   onError,
