@@ -106,3 +106,15 @@ ReactDOM.render(<App />, document.getElementById('root'))
 When the file has been loaded, it will be parsed with [PapaParse](https://github.com/mholt/PapaParse) from a CSV formatted text to a matrix of strings or a list of objects (using `header` option).
 That matrix is returned to the parent component with `onFileLoaded` function (it will be passed as an argument).
 The second argument to `onFileLoaded` will be the filename provided
+
+## Testing
+
+This packages uses `jest` for unit tests and snapshot testing.
+
+To run the tests:
+
+```sh
+yarn test
+```
+
+Submitting a PR will trigger GitHub Actions to automatically run the tests.
