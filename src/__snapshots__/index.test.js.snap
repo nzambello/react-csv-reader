@@ -12,6 +12,7 @@ exports[`CSVReader with all custom props is being rendered 1`] = `
   <input
     accept=".csv, text/csv, .tsv, test/tsv"
     className="custom-csv-input"
+    disabled={true}
     id="react-csv-reader"
     onChange={[Function]}
     style={
@@ -31,6 +32,7 @@ exports[`Renders basic CSVReader 1`] = `
   <input
     accept=".csv, text/csv"
     className="csv-input"
+    disabled={false}
     id="react-csv-reader-input"
     onChange={[Function]}
     style={Object {}}

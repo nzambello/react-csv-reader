@@ -89,7 +89,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 | Name          | Type            | Default                  | Description                                                                      |
 | ------------- | --------------- | ------------------------ | -------------------------------------------------------------------------------- |
-| accept        | striing         | `.csv, text/csv`         | File type accepted by file input                                                 |
+| accept        | striing         | `.csv, text/csv`         | File type accepted by file input.                                                |
 | cssClass      | string          | `csv-reader-input`       | A CSS class to be applied to the wrapper element.                                |
 | cssInputClass | string          | `csv-input`              | A CSS class to be applied to the `<input>` element.                              |
 | label         | string, element |                          | If present, it will be rendered in a `<label>` to describe input aim.            |
@@ -98,7 +98,8 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | parserOptions | object          | `{}`                     | [PapaParse configuration](https://www.papaparse.com/docs#config) object override |
 | inputId       | string          | `react-csv-reader-input` | An id to be applied to the `<input>` element.                                    |
 | inputStyle    | object          | `{}`                     | Some style to be applied to the `<input>` element.                               |
-| fileEncoding  | string          | `UTF-8`                  | Encoding type of the input file                                                  |
+| fileEncoding  | string          | `UTF-8`                  | Encoding type of the input file.                                                 |
+| disabled      | boolean         | `false`                  | Set input disabled attribute.                                                    |
 
 ### Results
 

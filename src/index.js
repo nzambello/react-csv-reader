@@ -1,5 +1,5 @@
 import React from 'react'
-import { object, string, func, element, oneOfType } from 'prop-types'
+import { object, string, bool, func, element, oneOfType } from 'prop-types'
 import PapaParse from 'papaparse'
 
 const CSVReader = ({
@@ -13,6 +13,7 @@ const CSVReader = ({
   onError,
   onFileLoaded,
   parserOptions = {},
+  disabled = false,
 }) => {
   const handleChangeFile = e => {
     let reader = new FileReader()
@@ -44,6 +45,7 @@ const CSVReader = ({
         style={inputStyle}
         accept={accept}
         onChange={e => handleChangeFile(e)}
+        disabled={disabled}
       />
     </div>
   )
@@ -60,6 +62,7 @@ CSVReader.propTypes = {
   onError: func,
   onFileLoaded: func.isRequired,
   parserOptions: object,
+  disabled: bool,
 }
 
 export default CSVReader
