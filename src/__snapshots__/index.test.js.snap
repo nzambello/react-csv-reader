@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders CSVReader with all custom props 1`] = `
+<div
+  className="custom-csv-reader"
+>
+  <label
+    htmlFor="react-csv-reader"
+  >
+    Select CSV with secret Death Star statistics
+  </label>
+  <input
+    accept=".csv, text/csv, .tsv, test/tsv"
+    className="custom-csv-input"
+    id="react-csv-reader"
+    onChange={[Function]}
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+    type="file"
+  />
+</div>
+`;
+
+exports[`Renders basic CSVReader 1`] = `
+<div
+  className="csv-reader-input"
+>
+  <input
+    accept=".csv, text/csv"
+    className="csv-input"
+    id="react-csv-reader-input"
+    onChange={[Function]}
+    style={Object {}}
+    type="file"
+  />
+</div>
+`;

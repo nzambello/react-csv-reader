@@ -11,8 +11,9 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.6.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
@@ -21,9 +22,11 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
+    "jest": "^25.1.0",
     "prettier": "^1.18.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-test-renderer": "^16.13.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
@@ -34,7 +37,8 @@
   },
   "scripts": {
     "build": "webpack -p",
-    "watch": "webpack --watch --progress"
+    "watch": "webpack --watch --progress",
+    "test": "jest"
   },
   "dependencies": {
     "papaparse": "^5.1.0"
