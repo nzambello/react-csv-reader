@@ -1124,7 +1124,15 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^25.1.4":
+"@types/jest-axe@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@types/jest-axe/-/jest-axe-3.2.1.tgz#84dc4306c105b304f14a594765beaa6a7aef763e"
+  integrity sha512-sn+MFd66gNnvhtBkbQBY6q2aznzLXUIN/jJqXd11D0P+PbUnDrthqyOj81O8BLhEYopmUXIp/ktVvdtj/1GZdw==
+  dependencies:
+    "@types/jest" "*"
+    axe-core "^3.0.3"
+
+"@types/jest@*", "@types/jest@^25.1.4":
   version "25.1.4"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.1.4.tgz#9e9f1e59dda86d3fd56afce71d1ea1b331f6f760"
   integrity sha512-QDDY2uNAhCV7TMCITrxz+MRk1EizcsevzfeS6LykIlq2V1E5oO4wXG8V2ZEd9w7Snxeeagk46YbMgZ8ESHx3sw==
@@ -1618,6 +1626,11 @@ aws4@^1.8.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.9.1.tgz#7e33d8f7d449b3f673cd72deb9abdc552dbe528e"
   integrity sha512-wMHVg2EOHaMRxbzgFJ9gtjOOCrI80OHLG14rxi28XwOW8ux6IiEbRCGGGqCtdAIg4FQCbW20k9RsT4y3gJlFug==
+
+axe-core@^3.0.3, axe-core@^3.5.1:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.5.2.tgz#1946be7a18a05b5d37f18d339989db0d5434ebf6"
+  integrity sha512-9wBDgdzbn06on6Xt+ay7EM4HV+NBOkeXhjK9DMezD8/qvJKeUTzheGHhM+U1uNaX4OvuIR4BePDStRLF7vyOfg==
 
 axobject-query@^2.0.2:
   version "2.1.2"
@@ -3784,6 +3797,16 @@ istanbul-reports@^3.0.0:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
+jest-axe@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/jest-axe/-/jest-axe-3.4.0.tgz#2bea80d37087e7723481ecc1b054f87ec563cabd"
+  integrity sha512-iKAq/cBxvyizSkpSY+CTndsXy2v5IWAkYXqanPF6bGaGXJ3fEtzEWQRVeZ0SHCEbsjnvDaOly5nwiiDOz0suDw==
+  dependencies:
+    axe-core "^3.5.1"
+    chalk "^3.0.0"
+    jest-matcher-utils "^25.1.0"
+    lodash.merge "^4.6.2"
+
 jest-changed-files@^25.1.0:
   version "25.1.0"
   resolved "https://registry.yarnpkg.com/jest-changed-files/-/jest-changed-files-25.1.0.tgz#73dae9a7d9949fdfa5c278438ce8f2ff3ec78131"
@@ -4360,6 +4383,11 @@ locate-path@^5.0.0:
   integrity sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
   dependencies:
     p-locate "^4.1.0"
+
+lodash.merge@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
 lodash.sortby@^4.7.0:
   version "4.7.0"

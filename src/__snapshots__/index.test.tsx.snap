@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CSVReader with all custom props is being rendered 1`] = `
+exports[`CSVReader is being rendered 1`] = `
 <div
   className="custom-csv-reader"
 >
@@ -20,22 +20,6 @@ exports[`CSVReader with all custom props is being rendered 1`] = `
         "color": "red",
       }
     }
-    type="file"
-  />
-</div>
-`;
-
-exports[`Renders basic CSVReader 1`] = `
-<div
-  className="csv-reader-input"
->
-  <input
-    accept=".csv, text/csv"
-    className="csv-input"
-    disabled={false}
-    id="react-csv-reader-input"
-    onChange={[Function]}
-    style={Object {}}
     type="file"
   />
 </div>

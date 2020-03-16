@@ -4,6 +4,7 @@
 [![npm version](https://badge.fury.io/js/react-csv-reader.svg)](https://www.npmjs.com/package/react-csv-reader)
 [![npm](https://img.shields.io/npm/dt/react-csv-reader.svg)](https://www.npmjs.com/package/react-csv-reader)
 ![Node.js CI](https://github.com/nzambello/react-csv-reader/workflows/Node.js%20CI/badge.svg?branch=master)
+![a11y axe](https://img.shields.io/badge/a11y-tested-brightgreen)
 
 React component that handles csv file input.  
 It handles file input and returns its content as a matrix.
@@ -126,4 +127,4 @@ To run the tests:
 yarn test
 ```
 
-Submitting a PR will trigger GitHub Actions to automatically run the tests.
+Automated accessibility tests are run with `jest-axe`.
