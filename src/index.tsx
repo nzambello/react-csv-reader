@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import * as PapaParse from 'papaparse'
 
-export interface IFileData {
+export interface IFileInfo {
   name: string
   size: number
   type: string
@@ -17,7 +17,7 @@ export interface CSVReaderProps {
   inputStyle?: object
   label?: string | React.ReactNode
   onError?: (error: Error) => void
-  onFileLoaded: (data: Array<any>, fileData: IFileData) => any // data: PapaParse.ParseResult.data
+  onFileLoaded: (data: Array<any>, fileInfo: IFileInfo) => any
   parserOptions?: object
   disabled?: boolean
 }
@@ -39,7 +39,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
     let reader: FileReader = new FileReader()
     const files: FileList = e.target.files
     if (files.length > 0) {
-      const fileData: IFileData = {
+      const fileInfo: IFileInfo = {
         name: files[0].name,
         size: files[0].size,
         type: files[0].type,
@@ -53,7 +53,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
             encoding: fileEncoding,
           }),
         )
-        onFileLoaded(csvData.data, fileData)
+        onFileLoaded(csvData.data, fileInfo)
       }
 
       reader.readAsText(files[0], fileEncoding)
