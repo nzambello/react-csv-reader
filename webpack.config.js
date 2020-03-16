@@ -2,7 +2,10 @@ var path = require('path')
 
 module.exports = {
   devtool: 'source-map',
-  entry: './src/index.js',
+  entry: './src/index.tsx',
+  resolve: {
+    extensions: ['.ts', '.tsx'],
+  },
   output: {
     filename: 'react-csv-reader.js',
     path: path.resolve(__dirname, 'dist'),
@@ -25,6 +28,20 @@ module.exports = {
       {
         test: /\.styl$/,
         loader: 'style-loader!css-loader!stylus-loader',
+      },
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+          },
+        ],
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader',
       },
     ],
   },
