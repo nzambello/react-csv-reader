@@ -40,7 +40,7 @@ class App extends Component {
 
   render() {
     return (
-      <CSVReader onFileLoaded={(data, fileName) => console.log(data, fileName)} />
+      <CSVReader onFileLoaded={(data, fileInfo) => console.dir(data, fileInfo)} />
     )
   }
 }
@@ -94,7 +94,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | cssClass      | string          | `csv-reader-input`       | A CSS class to be applied to the wrapper element.                                |
 | cssInputClass | string          | `csv-input`              | A CSS class to be applied to the `<input>` element.                              |
 | label         | string, element |                          | If present, it will be rendered in a `<label>` to describe input aim.            |
-| onFileLoaded  | function        |                          | (**_required_**) The function to be called passing loaded results.               |
+| onFileLoaded  | function        |                          | (**_required_**) The function to be called passing loaded results, see below.    |
 | onError       | function        |                          | Error handling function.                                                         |
 | parserOptions | object          | `{}`                     | [PapaParse configuration](https://www.papaparse.com/docs#config) object override |
 | inputId       | string          | `react-csv-reader-input` | An id to be applied to the `<input>` element.                                    |
@@ -102,11 +102,19 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | fileEncoding  | string          | `UTF-8`                  | Encoding type of the input file.                                                 |
 | disabled      | boolean         | `false`                  | Set input disabled attribute.                                                    |
 
-### Results
+### onFileLoaded
 
 When the file has been loaded, it will be parsed with [PapaParse](https://github.com/mholt/PapaParse) from a CSV formatted text to a matrix of strings or a list of objects (using `header` option).
-That matrix is returned to the parent component with `onFileLoaded` function (it will be passed as an argument).
-The second argument to `onFileLoaded` will be the filename provided
+That parsed data is returned to the parent component with `onFileLoaded` function (it will be passed as an argument).
+The second argument to `onFileLoaded` will be an object with infos about loaded file.
+
+```typescript
+// data: PapaParse.ParseResult.data
+// fileInfo: IFileInfo
+onFileLoaded: (data: Array<any>, fileInfo: IFileInfo) => any
+```
+
+For type definitions, see [here](src/index.tsx#L20).
 
 ## Testing
 

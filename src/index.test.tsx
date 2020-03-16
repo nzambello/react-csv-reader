@@ -1,6 +1,7 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
+import * as React from 'react'
+import * as renderer from 'react-test-renderer'
 import { cleanup, render } from '@testing-library/react'
+
 import CSVReader from './index'
 
 afterEach(cleanup)
@@ -16,7 +17,7 @@ describe('CSVReader with all custom props', () => {
     header: true,
     dynamicTyping: true,
     skipEmptyLines: true,
-    transformHeader: header => header.toLowerCase().replace(/\W/g, '_'),
+    transformHeader: (header: string) => header.toLowerCase().replace(/\W/g, '_'),
   }
 
   const csvReader = (
@@ -29,7 +30,7 @@ describe('CSVReader with all custom props', () => {
       inputStyle={{ color: 'red' }}
       label="CSV input label text"
       onError={e => console.error(e)}
-      onFileLoaded={(data, fileName) => console.log(data, fileName)}
+      onFileLoaded={(data, fileInfo) => console.dir(data, fileInfo)}
       parserOptions={papaparseOptions}
       disabled
     />
