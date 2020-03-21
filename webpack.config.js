@@ -26,10 +26,6 @@ module.exports = {
         },
       },
       {
-        test: /\.styl$/,
-        loader: 'style-loader!css-loader!stylus-loader',
-      },
-      {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
         use: [
