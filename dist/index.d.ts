@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as PapaParse from 'papaparse';
 export interface IFileInfo {
     name: string;
     size: number;
@@ -14,7 +15,7 @@ export interface CSVReaderProps {
     label?: string | React.ReactNode;
     onError?: (error: Error) => void;
     onFileLoaded: (data: Array<any>, fileInfo: IFileInfo) => any;
-    parserOptions?: object;
+    parserOptions?: PapaParse.ParseConfig;
     disabled?: boolean;
 }
 declare const CSVReader: React.FC<CSVReaderProps>;

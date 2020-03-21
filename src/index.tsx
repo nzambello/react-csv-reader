@@ -18,7 +18,7 @@ export interface CSVReaderProps {
   label?: string | React.ReactNode
   onError?: (error: Error) => void
   onFileLoaded: (data: Array<any>, fileInfo: IFileInfo) => any
-  parserOptions?: object
+  parserOptions?: PapaParse.ParseConfig
   disabled?: boolean
 }
 
@@ -32,7 +32,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
   label,
   onError,
   onFileLoaded,
-  parserOptions = {},
+  parserOptions = {} as PapaParse.ParseConfig,
   disabled = false,
 }) => {
   const handleChangeFile = (e: React.ChangeEvent<HTMLInputElement>) => {
