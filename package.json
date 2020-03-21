@@ -37,6 +37,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-test-renderer": "^16.13.0",
+    "release-it": "*",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
@@ -50,8 +51,9 @@
   },
   "scripts": {
     "build": "webpack -p",
-    "watch": "webpack --watch --progress",
-    "test": "jest"
+    "release": "release-it",
+    "test": "jest",
+    "watch": "webpack --watch --progress"
   },
   "dependencies": {
     "papaparse": "^5.1.1"

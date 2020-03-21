@@ -1,0 +1,10 @@
+{
+  "git": {
+    "changelog": "git log --pretty=format:\"* %s (%an) (%h)\" ${latestTag}...HEAD",
+    "tagName": "v${version}"
+  },
+  "hooks": {
+    "before:init": "yarn test",
+    "before:bump": "yarn build && npx auto-changelog -p"
+  }
+}
