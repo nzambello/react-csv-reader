@@ -4,6 +4,7 @@
 [![npm](https://img.shields.io/npm/dt/react-csv-reader)](https://www.npmjs.com/package/react-csv-reader)
 ![Node.js CI](https://github.com/nzambello/react-csv-reader/workflows/Node.js%20CI/badge.svg?branch=master)
 ![a11y axe](https://img.shields.io/badge/a11y-tested-brightgreen)
+![TypeScript Support](https://img.shields.io/badge/TypeScript-Support-blue)
 
 React component that handles csv file input.  
 It handles file input and returns its content as a matrix.
