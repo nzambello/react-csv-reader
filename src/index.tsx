@@ -53,7 +53,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
             encoding: fileEncoding,
           }),
         )
-        onFileLoaded(csvData.data, fileInfo)
+        onFileLoaded(csvData?.data ?? [], fileInfo)
       }
 
       reader.readAsText(files[0], fileEncoding)
