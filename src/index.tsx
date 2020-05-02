@@ -37,7 +37,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
 }) => {
   const handleChangeFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     let reader: FileReader = new FileReader()
-    const files: FileList = e.target.files
+    const files: FileList = e.target.files!
     if (files.length > 0) {
       const fileInfo: IFileInfo = {
         name: files[0].name,
@@ -45,7 +45,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
         type: files[0].type,
       }
 
-      reader.onload = (event: Event) => {
+      reader.onload = (_event: Event) => {
         const csvData = PapaParse.parse(
           reader.result as string,
           Object.assign(parserOptions, {
