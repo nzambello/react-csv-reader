@@ -66,7 +66,6 @@ describe('Testing CSVReader props:', () => {
     const cssLabelClass = 'custom-csv-label'
     const { getByText } = render(csvReader)
     const labelNode = getByText("CSV input label text");
-    //const inputNode = getByLabelText('CSV input label text')
 
     expect([...labelNode.classList]).toEqual([cssLabelClass])
   })
