@@ -1,6 +1,7 @@
 import * as React from 'react'
+ import * as React from 'react'
 import * as renderer from 'react-test-renderer'
-import { cleanup, render, getAllByRole, queryByDisplayValue } from '@testing-library/react'
+import { cleanup, render } from '@testing-library/react'
 import { axe, toHaveNoViolations } from 'jest-axe'
 
 import CSVReader from './index'
