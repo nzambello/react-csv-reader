@@ -12,6 +12,7 @@ export interface CSVReaderProps {
   accept?: string
   cssClass?: string
   cssInputClass?: string
+  cssLabelClass?: string
   fileEncoding?: string
   inputId?: string
   inputStyle?: object
@@ -26,6 +27,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
   accept = '.csv, text/csv',
   cssClass = 'csv-reader-input',
   cssInputClass = 'csv-input',
+  cssLabelClass = 'csv-label',
   fileEncoding = 'UTF-8',
   inputId = 'react-csv-reader-input',
   inputStyle = {},
@@ -62,7 +64,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
 
   return (
     <div className={cssClass}>
-      {label && <label htmlFor={inputId}>{label}</label>}
+      {label && <label className={cssLabelClass} htmlFor={inputId}>{label}</label>}
       <input
         className={cssInputClass}
         type="file"
@@ -80,6 +82,7 @@ CSVReader.propTypes = {
   accept: PropTypes.string,
   cssClass: PropTypes.string,
   cssInputClass: PropTypes.string,
+  cssLabelClass: PropTypes.string,
   fileEncoding: PropTypes.string,
   inputId: PropTypes.string,
   inputStyle: PropTypes.object,

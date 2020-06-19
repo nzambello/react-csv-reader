@@ -9,6 +9,7 @@ export interface CSVReaderProps {
     accept?: string;
     cssClass?: string;
     cssInputClass?: string;
+    cssLabelClass?: string;
     fileEncoding?: string;
     inputId?: string;
     inputStyle?: object;
