@@ -5,6 +5,7 @@ exports[`CSVReader is being rendered 1`] = `
   className="custom-csv-reader"
 >
   <label
+    className="custom-csv-label"
     htmlFor="react-csv-reader"
   >
     CSV input label text

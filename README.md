@@ -94,6 +94,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | accept        | striing         | `.csv, text/csv`         | File type accepted by file input.                                                |
 | cssClass      | string          | `csv-reader-input`       | A CSS class to be applied to the wrapper element.                                |
 | cssInputClass | string          | `csv-input`              | A CSS class to be applied to the `<input>` element.                              |
+| cssLabelClass | string          | `csv-label`              | A CSS class to be applied to the `<label>` element.                              |
 | label         | string, element |                          | If present, it will be rendered in a `<label>` to describe input aim.            |
 | onFileLoaded  | function        |                          | (**_required_**) The function to be called passing loaded results, see below.    |
 | onError       | function        |                          | Error handling function.                                                         |

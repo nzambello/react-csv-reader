@@ -20,6 +20,7 @@ const csvReader = (
     accept=".csv, text/csv, .tsv, test/tsv"
     cssClass="custom-csv-reader"
     cssInputClass="custom-csv-input"
+    cssLabelClass="custom-csv-label"
     fileEncoding="iso-8859-1"
     inputId="react-csv-reader"
     inputStyle={{ color: 'red' }}
@@ -59,6 +60,14 @@ describe('Testing CSVReader props:', () => {
     const inputNode = getByLabelText('CSV input label text')
 
     expect([...inputNode.classList]).toEqual(expect.arrayContaining([cssInputClass]))
+  })
+
+  test('has cssLabelClass prop set', () => {
+    const cssLabelClass = 'custom-csv-label'
+    const { getByText } = render(csvReader)
+    const labelNode = getByText("CSV input label text");
+
+    expect([...labelNode.classList]).toEqual([cssLabelClass])
   })
 
   test('has inputId prop set', () => {
