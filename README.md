@@ -9,7 +9,9 @@
 React component that handles csv file input.  
 It handles file input and returns its content as a matrix.
 
-You can try it out in a [demo on Codesandbox](https://codesandbox.io/s/react-csv-reader-vtull).
+Docs: [nzambello.github.io/react-csv-reader](https://nzambello.github.io/react-csv-reader/)
+
+You can try it out in the playground in the [docs](https://nzambello.github.io/react-csv-reader/usage#playground) or in the [demo on Codesandbox](https://codesandbox.io/s/react-csv-reader-vtull).
 
 ## Installation
 
