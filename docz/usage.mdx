@@ -1,0 +1,34 @@
+---
+route: /usage
+name: Usage
+---
+
+import CSVReader from '../src'
+import { Props, Playground } from 'docz'
+
+# CSVReader
+
+Bare minimal example:
+
+```tsx
+import * as React from 'react'
+import CSVReader from 'react-csv-reader'
+
+const App: React.FC = () => (
+    <CSVReader parserOptions={{ header: true }} onFileLoaded={(data, fileInfo) => console.dir(data, fileInfo)} />
+)
+```
+
+## Playground
+
+<Playground>
+<CSVReader
+    parserOptions={{ header: true }}
+    onFileLoaded={(data, fileInfo) => console.dir(data, fileInfo)}
+    />
+</Playground>
+
+
+## Props
+
+<Props of={CSVReader} />

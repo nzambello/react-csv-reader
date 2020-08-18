@@ -52,6 +52,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# docz tmp build folder
+.docz
 
 ### Vim ###
 # swap
