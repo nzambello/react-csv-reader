@@ -10,7 +10,6 @@
   "license": "MIT",
   "types": "./dist/index.d.ts",
   "devDependencies": {
-    "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "^7.8.3",
@@ -59,7 +58,7 @@
     "docz:serve": "docz build && docz serve"
   },
   "dependencies": {
-    "@types/papaparse": "^5.0.3",
-    "papaparse": "^5.1.1"
+    "@types/papaparse": "^5.2.4",
+    "papaparse": "^5.3.0"
   }
 }
