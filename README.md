@@ -6,7 +6,7 @@
 ![a11y axe](https://img.shields.io/badge/a11y-tested-brightgreen)
 ![TypeScript Support](https://img.shields.io/badge/TypeScript-Support-blue)
 
-React component that handles csv file input.  
+React component that handles csv file input.
 It handles file input and returns its content as a matrix.
 
 Docs: [nzambello.github.io/react-csv-reader](https://nzambello.github.io/react-csv-reader/)
@@ -80,6 +80,7 @@ class App extends Component {
         onError={this.handleDarkSideForce}
         parserOptions={papaparseOptions}
         inputId="ObiWan"
+        inputName="ObiWan"
         inputStyle={{color: 'red'}}
       />
     )
@@ -102,6 +103,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | onError       | function        |                          | Error handling function.                                                         |
 | parserOptions | object          | `{}`                     | [PapaParse configuration](https://www.papaparse.com/docs#config) object override |
 | inputId       | string          | `react-csv-reader-input` | An id to be applied to the `<input>` element.                                    |
+| inputName     | string          | `react-csv-reader-input` | A name attribute to be applied to the `<input>` element.                         |
 | inputStyle    | object          | `{}`                     | Some style to be applied to the `<input>` element.                               |
 | fileEncoding  | string          | `UTF-8`                  | Encoding type of the input file.                                                 |
 | disabled      | boolean         | `false`                  | Set input disabled attribute.                                                    |
