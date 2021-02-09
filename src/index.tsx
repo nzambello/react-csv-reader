@@ -31,7 +31,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
   cssLabelClass = 'csv-label',
   fileEncoding = 'UTF-8',
   inputId = 'react-csv-reader-input',
-  inputName= 'react-csv-reader-input'
+  inputName= 'react-csv-reader-input',
   inputStyle = {},
   label,
   onError,
