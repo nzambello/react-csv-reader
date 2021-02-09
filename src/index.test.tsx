@@ -78,6 +78,14 @@ describe('Testing CSVReader props:', () => {
     expect(inputNode.getAttribute('id')).toBe(inputId)
   })
 
+  test('has inputName prop set', () => {
+    const inputName = 'react-csv-reader'
+    const { getByLabelText } = render(csvReader)
+    const inputNode = getByLabelText('CSV input label text')
+
+    expect(inputNode.getAttribute('name')).toBe(inputName)
+  })
+
   test('has label prop set', () => {
     const { getByLabelText } = render(csvReader)
     const inputNode = getByLabelText('CSV input label text')
