@@ -15,6 +15,7 @@ exports[`CSVReader is being rendered 1`] = `
     className="custom-csv-input"
     disabled={true}
     id="react-csv-reader"
+    name="react-csv-reader"
     onChange={[Function]}
     style={
       Object {

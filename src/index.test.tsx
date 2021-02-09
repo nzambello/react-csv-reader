@@ -23,6 +23,7 @@ const csvReader = (
     cssLabelClass="custom-csv-label"
     fileEncoding="iso-8859-1"
     inputId="react-csv-reader"
+    inputName="react-csv-reader"
     inputStyle={{ color: 'red' }}
     label="CSV input label text"
     onError={e => console.error(e)}
