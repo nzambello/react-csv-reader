@@ -133,3 +133,7 @@ yarn test
 ```
 
 Automated accessibility tests are run with `jest-axe`.
+
+## Contributions
+
+Please follow our [convention](COMMITLINT.md) on commits format.
