@@ -15,6 +15,7 @@ export interface CSVReaderProps {
   cssLabelClass?: string
   fileEncoding?: string
   inputId?: string
+  inputName?: string
   inputStyle?: object
   label?: string | React.ReactNode
   onError?: (error: Error) => void
@@ -30,6 +31,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
   cssLabelClass = 'csv-label',
   fileEncoding = 'UTF-8',
   inputId = 'react-csv-reader-input',
+  inputName= 'react-csv-reader-input',
   inputStyle = {},
   label,
   onError,
@@ -69,6 +71,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
         className={cssInputClass}
         type="file"
         id={inputId}
+        name={inputName}
         style={inputStyle}
         accept={accept}
         onChange={e => handleChangeFile(e)}
@@ -85,6 +88,7 @@ CSVReader.propTypes = {
   cssLabelClass: PropTypes.string,
   fileEncoding: PropTypes.string,
   inputId: PropTypes.string,
+  inputName: PropTypes.string,
   inputStyle: PropTypes.object,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   onError: PropTypes.func,

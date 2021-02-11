@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/nzambello/react-csv-reader/compare/v3.1.2...v3.2.0) (2021-02-10)
+
+
+### Features
+
+* Add name attribute to file input ([24866bf](https://github.com/nzambello/react-csv-reader/commit/24866bfcc1bd1affe6a5c1ce69bfe4796e3dd205))
+
 ### Changelog
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.

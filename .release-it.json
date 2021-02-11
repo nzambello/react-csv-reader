@@ -1,15 +1,22 @@
 {
   "git": {
-    "changelog": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs",
     "tagName": "v${version}"
   },
   "github": {
     "release": true,
-    "releaseName": "${version}",
-    "releaseNotes": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+    "releaseName": "${version}"
+  },
+  "npm": {
+    "publish": true,
+    "skipChecks": true
   },
   "hooks": {
-    "before:init": "yarn test",
-    "after:bump": "npx auto-changelog --commit-limit false -p && yarn build"
+    "before:init": "yarn test"
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md"
+    }
   }
 }

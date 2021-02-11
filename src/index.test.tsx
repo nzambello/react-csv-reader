@@ -23,6 +23,7 @@ const csvReader = (
     cssLabelClass="custom-csv-label"
     fileEncoding="iso-8859-1"
     inputId="react-csv-reader"
+    inputName="react-csv-reader"
     inputStyle={{ color: 'red' }}
     label="CSV input label text"
     onError={e => console.error(e)}
@@ -76,6 +77,14 @@ describe('Testing CSVReader props:', () => {
     const inputNode = getByLabelText('CSV input label text')
 
     expect(inputNode.getAttribute('id')).toBe(inputId)
+  })
+
+  test('has inputName prop set', () => {
+    const inputName = 'react-csv-reader'
+    const { getByLabelText } = render(csvReader)
+    const inputNode = getByLabelText('CSV input label text')
+
+    expect(inputNode.getAttribute('name')).toBe(inputName)
   })
 
   test('has label prop set', () => {
