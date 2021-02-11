@@ -12,6 +12,7 @@ export interface CSVReaderProps {
     cssLabelClass?: string;
     fileEncoding?: string;
     inputId?: string;
+    inputName?: string;
     inputStyle?: object;
     label?: string | React.ReactNode;
     onError?: (error: Error) => void;
