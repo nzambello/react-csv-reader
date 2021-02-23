@@ -107,6 +107,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | inputStyle    | object          | `{}`                     | Some style to be applied to the `<input>` element.                               |
 | fileEncoding  | string          | `UTF-8`                  | Encoding type of the input file.                                                 |
 | disabled      | boolean         | `false`                  | Set input disabled attribute.                                                    |
+| strict        | boolean         | `false`                  | Throws error on `onError` if file type is different from `accept`.               |
 
 ### onFileLoaded
 

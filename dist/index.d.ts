@@ -19,6 +19,7 @@ export interface CSVReaderProps {
     onFileLoaded: (data: Array<any>, fileInfo: IFileInfo) => any;
     parserOptions?: PapaParse.ParseConfig;
     disabled?: boolean;
+    strict?: boolean;
 }
 declare const CSVReader: React.FC<CSVReaderProps>;
 export default CSVReader;
