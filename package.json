@@ -11,6 +11,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "webpack -p",
+    "prerelease": "webpack -p",
     "release": "release-it",
     "test": "jest --rootDir src",
     "watch": "webpack --watch --progress",

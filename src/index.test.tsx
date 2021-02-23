@@ -30,6 +30,7 @@ const csvReader = (
     onFileLoaded={(data, fileInfo) => console.dir(data, fileInfo)}
     parserOptions={papaparseOptions}
     disabled
+    strict
   />
 )
 

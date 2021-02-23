@@ -22,6 +22,7 @@ export interface CSVReaderProps {
   onFileLoaded: (data: Array<any>, fileInfo: IFileInfo) => any
   parserOptions?: PapaParse.ParseConfig
   disabled?: boolean
+  strict?: boolean
 }
 
 const CSVReader: React.FC<CSVReaderProps> = ({
@@ -31,22 +32,29 @@ const CSVReader: React.FC<CSVReaderProps> = ({
   cssLabelClass = 'csv-label',
   fileEncoding = 'UTF-8',
   inputId = 'react-csv-reader-input',
-  inputName= 'react-csv-reader-input',
+  inputName = 'react-csv-reader-input',
   inputStyle = {},
   label,
-  onError,
+  onError = () => {},
   onFileLoaded,
   parserOptions = {} as PapaParse.ParseConfig,
   disabled = false,
+  strict = false,
 }) => {
   const handleChangeFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     let reader: FileReader = new FileReader()
     const files: FileList = e.target.files!
+
     if (files.length > 0) {
       const fileInfo: IFileInfo = {
         name: files[0].name,
         size: files[0].size,
         type: files[0].type,
+      }
+
+      if (strict && accept.indexOf(fileInfo.type) <= 0) {
+        onError(new Error(`[strict mode] Accept type not respected: got '${fileInfo.type}' but not in '${accept}'`))
+        return
       }
 
       reader.onload = (_event: Event) => {
@@ -66,7 +74,11 @@ const CSVReader: React.FC<CSVReaderProps> = ({
 
   return (
     <div className={cssClass}>
-      {label && <label className={cssLabelClass} htmlFor={inputId}>{label}</label>}
+      {label && (
+        <label className={cssLabelClass} htmlFor={inputId}>
+          {label}
+        </label>
+      )}
       <input
         className={cssInputClass}
         type="file"
@@ -74,7 +86,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
         name={inputName}
         style={inputStyle}
         accept={accept}
-        onChange={e => handleChangeFile(e)}
+        onChange={handleChangeFile}
         disabled={disabled}
       />
     </div>
@@ -95,6 +107,7 @@ CSVReader.propTypes = {
   onFileLoaded: PropTypes.func.isRequired,
   parserOptions: PropTypes.object,
   disabled: PropTypes.bool,
+  strict: PropTypes.bool,
 }
 
 export default CSVReader
