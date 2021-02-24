@@ -1,3 +1,10 @@
+# [3.3.0](https://github.com/nzambello/react-csv-reader/compare/v3.2.1...v3.3.0) (2021-02-24)
+
+
+### Features
+
+* add strict prop for file type validation ([42078e5](https://github.com/nzambello/react-csv-reader/commit/42078e5d4f8c5432f14d69b5187b53d27599768f))
+
 ## [3.2.1](https://github.com/nzambello/react-csv-reader/compare/v3.2.0...v3.2.1) (2021-02-11)
 
 # [3.2.0](https://github.com/nzambello/react-csv-reader/compare/v3.1.2...v3.2.0) (2021-02-10)
