@@ -1,7 +1,7 @@
 # react-csv-reader
 
 [![npm version](https://img.shields.io/github/package-json/v/nzambello/react-csv-reader)](https://www.npmjs.com/package/react-csv-reader)
-[![npm](https://img.shields.io/npm/dt/react-csv-reader)](https://www.npmjs.com/package/react-csv-reader)
+[![npm](https://img.shields.io/npm/dm/react-csv-reader)](https://www.npmjs.com/package/react-csv-reader)
 ![Node.js CI](https://github.com/nzambello/react-csv-reader/workflows/Node.js%20CI/badge.svg?branch=master)
 ![a11y axe](https://img.shields.io/badge/a11y-tested-brightgreen)
 ![TypeScript Support](https://img.shields.io/badge/TypeScript-Support-blue)
