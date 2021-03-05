@@ -94,7 +94,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 | Name          | Type            | Default                  | Description                                                                      |
 | ------------- | --------------- | ------------------------ | -------------------------------------------------------------------------------- |
-| accept        | string         | `.csv, text/csv`         | File type accepted by file input.                                                |
+| accept        | string          | `.csv, text/csv`         | File type accepted by file input.                                                |
 | cssClass      | string          | `csv-reader-input`       | A CSS class to be applied to the wrapper element.                                |
 | cssInputClass | string          | `csv-input`              | A CSS class to be applied to the `<input>` element.                              |
 | cssLabelClass | string          | `csv-label`              | A CSS class to be applied to the `<label>` element.                              |
