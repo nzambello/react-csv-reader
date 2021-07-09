@@ -1,3 +1,16 @@
+### [3.3.1](https://github.com/nzambello/react-csv-reader/compare/v3.3.0...v3.3.1) (2021-07-09)
+
+
+### Bug Fixes
+
+* fixed typo ([#58](https://github.com/nzambello/react-csv-reader/issues/58)) ([d9f0178](https://github.com/nzambello/react-csv-reader/commit/d9f0178550b49607e48cb897869169762b9e17a3))
+
+
+### Maintenance
+
+* react 16-17 in peerDeps ([#71](https://github.com/nzambello/react-csv-reader/issues/71)) ([3fe9f9b](https://github.com/nzambello/react-csv-reader/commit/3fe9f9bc9ed03c7044957e9d55a3a3ce301c7d02))
+* update changelog preset types ([b122b35](https://github.com/nzambello/react-csv-reader/commit/b122b35859b8c8ca201720e64c5873c2b6e3b073))
+
 # [3.3.0](https://github.com/nzambello/react-csv-reader/compare/v3.2.1...v3.3.0) (2021-02-24)
 
 
