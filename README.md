@@ -43,7 +43,7 @@ class App extends Component {
 
   render() {
     return (
-      <CSVReader onFileLoaded={(data, fileInfo) => console.dir(data, fileInfo)} />
+      <CSVReader onFileLoaded={(data, fileInfo, originalFile) => console.dir(data, fileInfo, originalFile)} />
     )
   }
 }
@@ -118,7 +118,7 @@ The second argument to `onFileLoaded` will be an object with infos about loaded 
 ```typescript
 // data: PapaParse.ParseResult.data
 // fileInfo: IFileInfo
-onFileLoaded: (data: Array<any>, fileInfo: IFileInfo) => any
+onFileLoaded: (data: Array<any>, fileInfo: IFileInfo, originalFile: File) => any
 ```
 
 For type definitions, see [here](src/index.tsx#L20).
