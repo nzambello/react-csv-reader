@@ -1,3 +1,15 @@
+## [3.4.0](https://github.com/nzambello/react-csv-reader/compare/v3.3.1...v3.4.0) (2021-10-04)
+
+
+### Features
+
+* add originalFile to onFileLoaded ([0d379bd](https://github.com/nzambello/react-csv-reader/commit/0d379bd07813d5a77264ea811d0cd7c3f9310bc8))
+
+
+### Bug Fixes
+
+* originalFile attr + run build ([66906d8](https://github.com/nzambello/react-csv-reader/commit/66906d8b2aa4f0731f6843dcff5c41adf6bee928))
+
 ### [3.3.1](https://github.com/nzambello/react-csv-reader/compare/v3.3.0...v3.3.1) (2021-07-09)
 
 
