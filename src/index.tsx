@@ -19,7 +19,7 @@ export interface CSVReaderProps {
   inputStyle?: object
   label?: string | React.ReactNode
   onError?: (error: Error) => void
-  onFileLoaded: (data: Array<any>, fileInfo: IFileInfo) => any
+  onFileLoaded: (data: Array<any>, fileInfo: IFileInfo, originalFile?: File) => any
   parserOptions?: PapaParse.ParseConfig
   disabled?: boolean
   strict?: boolean
