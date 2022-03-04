@@ -17,6 +17,7 @@ export interface CSVReaderProps {
   inputId?: string
   inputName?: string
   inputStyle?: object
+  inputRef?: React.LegacyRef<HTMLInputElement>
   label?: string | React.ReactNode
   onError?: (error: Error) => void
   onFileLoaded: (data: Array<any>, fileInfo: IFileInfo, originalFile?: File) => any
@@ -34,6 +35,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
   inputId = 'react-csv-reader-input',
   inputName = 'react-csv-reader-input',
   inputStyle = {},
+  inputRef,
   label,
   onError = () => {},
   onFileLoaded,
@@ -88,6 +90,7 @@ const CSVReader: React.FC<CSVReaderProps> = ({
         accept={accept}
         onChange={handleChangeFile}
         disabled={disabled}
+        ref={inputRef}
       />
     </div>
   )
@@ -102,6 +105,7 @@ CSVReader.propTypes = {
   inputId: PropTypes.string,
   inputName: PropTypes.string,
   inputStyle: PropTypes.object,
+  inputRef: PropTypes.func,
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   onError: PropTypes.func,
   onFileLoaded: PropTypes.func.isRequired,
