@@ -14,6 +14,7 @@ export interface CSVReaderProps {
     inputId?: string;
     inputName?: string;
     inputStyle?: object;
+    inputRef?: React.LegacyRef<HTMLInputElement>;
     label?: string | React.ReactNode;
     onError?: (error: Error) => void;
     onFileLoaded: (data: Array<any>, fileInfo: IFileInfo, originalFile?: File) => any;
