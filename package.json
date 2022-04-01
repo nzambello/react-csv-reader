@@ -30,6 +30,7 @@
     "@testing-library/react": "^10.0.1",
     "@types/jest": "^25.1.4",
     "@types/jest-axe": "^3.2.1",
+    "@types/papaparse": "^5.2.4",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/react-test-renderer": "^16.9.2",
@@ -59,16 +60,19 @@
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
-    "react": "16 - 17",
-    "react-dom": "16 - 17"
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
   },
   "dependencies": {
-    "@types/papaparse": "^5.2.4",
     "papaparse": "^5.3.0"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "volta": {
+    "node": "14.19.1",
+    "yarn": "1.22.18"
   }
 }
