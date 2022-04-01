@@ -1,3 +1,15 @@
+## [3.5.0](https://github.com/nzambello/react-csv-reader/compare/v3.4.0...v3.5.0) (2022-04-01)
+
+
+### Features
+
+* add inputRef prop. ([7ec784c](https://github.com/nzambello/react-csv-reader/commit/7ec784cb088b8cd912bdf4cea9d8723d9136a95d))
+
+
+### Maintenance
+
+* run dist, move types to dev deps, update docz build ([a5de40d](https://github.com/nzambello/react-csv-reader/commit/a5de40d3b79813bf748ba03cde4e01a77052c384))
+
 ## [3.4.0](https://github.com/nzambello/react-csv-reader/compare/v3.3.1...v3.4.0) (2021-10-04)
 
 
