@@ -67,7 +67,7 @@ describe('Testing CSVReader props:', () => {
   test('has cssLabelClass prop set', () => {
     const cssLabelClass = 'custom-csv-label'
     const { getByText } = render(csvReader)
-    const labelNode = getByText("CSV input label text");
+    const labelNode = getByText('CSV input label text')
 
     expect([...labelNode.classList]).toEqual([cssLabelClass])
   })
@@ -101,4 +101,14 @@ describe('Testing CSVReader props:', () => {
 
     expect(inputNode.getAttribute('disabled')).toBeDefined()
   })
+})
+
+test('prop-types error when give RefObject to inputRef', async () => {
+  console.error = jest.fn()
+  const inputRef: React.RefObject<HTMLInputElement> = { current: null }
+  React.createElement(CSVReader, {
+    inputRef,
+    onFileLoaded: (data, fileInfo) => console.dir(data, fileInfo),
+  })
+  expect(console.error).toHaveBeenCalledTimes(0)
 })
