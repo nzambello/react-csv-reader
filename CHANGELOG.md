@@ -1,3 +1,11 @@
+### [3.5.1](https://github.com/nzambello/react-csv-reader/compare/v3.5.0...v3.5.1) (2022-09-22)
+
+
+### Maintenance
+
+* add react 17.0.0 to peerDependencies ([a4202bd](https://github.com/nzambello/react-csv-reader/commit/a4202bded38b3783e6c533f34ef48d9e2d6adf14))
+* update peerDependencies to expect react 17 as well ([19164a0](https://github.com/nzambello/react-csv-reader/commit/19164a0de1dca643e789e466ccbbf9891dd657de))
+
 ## [3.5.0](https://github.com/nzambello/react-csv-reader/compare/v3.4.0...v3.5.0) (2022-04-01)
 
 
