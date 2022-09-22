@@ -1,3 +1,10 @@
+### [3.5.2](https://github.com/nzambello/react-csv-reader/compare/v3.5.1...v3.5.2) (2022-09-22)
+
+
+### Bug Fixes
+
+* prop-types error ([214ce9b](https://github.com/nzambello/react-csv-reader/commit/214ce9bb56c8d9054744745b3affac1e42f410ec))
+
 ### [3.5.1](https://github.com/nzambello/react-csv-reader/compare/v3.5.0...v3.5.1) (2022-09-22)
 
 
