@@ -107,8 +107,22 @@ test('prop-types error when give RefObject to inputRef', async () => {
   console.error = jest.fn()
   const inputRef: React.RefObject<HTMLInputElement> = { current: null }
   React.createElement(CSVReader, {
-    inputRef,
+    ref: inputRef,
     onFileLoaded: (data, fileInfo) => console.dir(data, fileInfo),
   })
+  expect(console.error).toHaveBeenCalledTimes(0)
+})
+
+test('prop-types in Production do not error when given MutableRef to inputRef', async () => {
+  // @ts-ignore
+  const ProductionCSVReader = (await import('../dist/react-csv-reader')).default as typeof CSVReader
+
+  console.error = jest.fn()
+  const inputRef: React.MutableRefObject<HTMLInputElement> = { current: null }
+  React.createElement(ProductionCSVReader, {
+    ref: inputRef,
+    onFileLoaded: (data, fileInfo) => console.dir(data, fileInfo),
+  })
+
   expect(console.error).toHaveBeenCalledTimes(0)
 })

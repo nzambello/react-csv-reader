@@ -14,7 +14,6 @@ export interface CSVReaderProps {
     inputId?: string;
     inputName?: string;
     inputStyle?: object;
-    inputRef?: React.LegacyRef<HTMLInputElement>;
     label?: string | React.ReactNode;
     onError?: (error: Error) => void;
     onFileLoaded: (data: Array<any>, fileInfo: IFileInfo, originalFile?: File) => any;
@@ -22,5 +21,5 @@ export interface CSVReaderProps {
     disabled?: boolean;
     strict?: boolean;
 }
-declare const CSVReader: React.FC<CSVReaderProps>;
+declare const CSVReader: React.ForwardRefExoticComponent<CSVReaderProps & React.RefAttributes<HTMLInputElement>>;
 export default CSVReader;

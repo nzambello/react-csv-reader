@@ -17,7 +17,6 @@ export interface CSVReaderProps {
   inputId?: string
   inputName?: string
   inputStyle?: object
-  inputRef?: React.LegacyRef<HTMLInputElement>
   label?: string | React.ReactNode
   onError?: (error: Error) => void
   onFileLoaded: (data: Array<any>, fileInfo: IFileInfo, originalFile?: File) => any
@@ -26,75 +25,79 @@ export interface CSVReaderProps {
   strict?: boolean
 }
 
-const CSVReader: React.FC<CSVReaderProps> = ({
-  accept = '.csv, text/csv',
-  cssClass = 'csv-reader-input',
-  cssInputClass = 'csv-input',
-  cssLabelClass = 'csv-label',
-  fileEncoding = 'UTF-8',
-  inputId = 'react-csv-reader-input',
-  inputName = 'react-csv-reader-input',
-  inputStyle = {},
-  inputRef,
-  label,
-  onError = () => {},
-  onFileLoaded,
-  parserOptions = {} as PapaParse.ParseConfig,
-  disabled = false,
-  strict = false,
-}) => {
-  const handleChangeFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let reader: FileReader = new FileReader()
-    const files: FileList = e.target.files!
+const CSVReader = React.forwardRef<HTMLInputElement, CSVReaderProps>(
+  (
+    {
+      accept = '.csv, text/csv',
+      cssClass = 'csv-reader-input',
+      cssInputClass = 'csv-input',
+      cssLabelClass = 'csv-label',
+      fileEncoding = 'UTF-8',
+      inputId = 'react-csv-reader-input',
+      inputName = 'react-csv-reader-input',
+      inputStyle = {},
+      label,
+      onError = () => {},
+      onFileLoaded,
+      parserOptions = {} as PapaParse.ParseConfig,
+      disabled = false,
+      strict = false,
+    },
+    inputRef,
+  ) => {
+    const handleChangeFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+      let reader: FileReader = new FileReader()
+      const files: FileList = e.target.files!
 
-    if (files.length > 0) {
-      const fileInfo: IFileInfo = {
-        name: files[0].name,
-        size: files[0].size,
-        type: files[0].type,
+      if (files.length > 0) {
+        const fileInfo: IFileInfo = {
+          name: files[0].name,
+          size: files[0].size,
+          type: files[0].type,
+        }
+
+        if (strict && accept.indexOf(fileInfo.type) <= 0) {
+          onError(new Error(`[strict mode] Accept type not respected: got '${fileInfo.type}' but not in '${accept}'`))
+          return
+        }
+
+        reader.onload = (_event: Event) => {
+          const csvData = PapaParse.parse(
+            reader.result as string,
+            Object.assign(parserOptions, {
+              error: onError,
+              encoding: fileEncoding,
+            }),
+          )
+          onFileLoaded(csvData?.data ?? [], fileInfo, files[0])
+        }
+
+        reader.readAsText(files[0], fileEncoding)
       }
-
-      if (strict && accept.indexOf(fileInfo.type) <= 0) {
-        onError(new Error(`[strict mode] Accept type not respected: got '${fileInfo.type}' but not in '${accept}'`))
-        return
-      }
-
-      reader.onload = (_event: Event) => {
-        const csvData = PapaParse.parse(
-          reader.result as string,
-          Object.assign(parserOptions, {
-            error: onError,
-            encoding: fileEncoding,
-          }),
-        )
-        onFileLoaded(csvData?.data ?? [], fileInfo, files[0])
-      }
-
-      reader.readAsText(files[0], fileEncoding)
     }
-  }
 
-  return (
-    <div className={cssClass}>
-      {label && (
-        <label className={cssLabelClass} htmlFor={inputId}>
-          {label}
-        </label>
-      )}
-      <input
-        className={cssInputClass}
-        type="file"
-        id={inputId}
-        name={inputName}
-        style={inputStyle}
-        accept={accept}
-        onChange={handleChangeFile}
-        disabled={disabled}
-        ref={inputRef}
-      />
-    </div>
-  )
-}
+    return (
+      <div className={cssClass}>
+        {label && (
+          <label className={cssLabelClass} htmlFor={inputId}>
+            {label}
+          </label>
+        )}
+        <input
+          className={cssInputClass}
+          type="file"
+          id={inputId}
+          name={inputName}
+          style={inputStyle}
+          accept={accept}
+          onChange={handleChangeFile}
+          disabled={disabled}
+          ref={inputRef}
+        />
+      </div>
+    )
+  },
+)
 
 CSVReader.propTypes = {
   accept: PropTypes.string,
