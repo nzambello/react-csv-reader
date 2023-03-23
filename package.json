@@ -8,6 +8,10 @@
   "author": "Nicola Zambello (github.com/nzambello)",
   "homepage": "https://github.com/nzambello/react-csv-reader#readme",
   "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "webpack -p",
