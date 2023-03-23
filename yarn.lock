@@ -20275,6 +20275,7 @@ __metadata:
     jest-axe: ^3.4.0
     papaparse: ^5.3.0
     prettier: ^1.19.1
+    prop-types: ^15.7.2
     react: ^16.13.0
     react-dom: ^16.13.0
     react-test-renderer: ^16.13.0
