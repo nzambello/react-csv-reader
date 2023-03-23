@@ -1,3 +1,29 @@
+## [4.0.0](https://github.com/nzambello/react-csv-reader/compare/v3.5.2...v4.0.0) (2023-03-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* Console error when using MutableRef from useRef
+
+### Features
+
+* support react 18 ([3d02d93](https://github.com/nzambello/react-csv-reader/commit/3d02d936657b491ee0ae674f362ca4e7d25559e8))
+
+
+### Bug Fixes
+
+* `npm run docz:build` error ([5b410d0](https://github.com/nzambello/react-csv-reader/commit/5b410d0949c65ce765ea5356d4e87eeac9b4bfd7))
+* cleanup merge conflicts ([90248db](https://github.com/nzambello/react-csv-reader/commit/90248dbd306faf0912055e0408bc4174eb3dcd93))
+* Console error when using MutableRef from useRef ([6d5a595](https://github.com/nzambello/react-csv-reader/commit/6d5a595536dda3de1fe73a17a0c47a7b06e2dcfc))
+
+
+### Maintenance
+
+* `npm run build` ([62c04e1](https://github.com/nzambello/react-csv-reader/commit/62c04e10763021c78c5c40a4c1b1083e9ec4cfaf))
+* add prop-types as dep ([a4067a4](https://github.com/nzambello/react-csv-reader/commit/a4067a43a5cf188656d24e2e5f7e977e4d0ee066))
+* run build ([ebae51b](https://github.com/nzambello/react-csv-reader/commit/ebae51bdf5c15e4a5a38ece2afd6ea28c9b9141e))
+* upgrade to yarn@3 ([ebde83b](https://github.com/nzambello/react-csv-reader/commit/ebde83b5c8a399ae105008915b5553d9cb172c71))
+
 ### [3.5.2](https://github.com/nzambello/react-csv-reader/compare/v3.5.1...v3.5.2) (2022-09-22)
 
 
