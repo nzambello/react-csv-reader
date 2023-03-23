@@ -108,7 +108,6 @@ CSVReader.propTypes = {
   inputId: PropTypes.string,
   inputName: PropTypes.string,
   inputStyle: PropTypes.object,
-  inputRef: PropTypes.oneOfType([PropTypes.func, PropTypes.exact({ current: PropTypes.any })]),
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   onError: PropTypes.func,
   onFileLoaded: PropTypes.func.isRequired,
